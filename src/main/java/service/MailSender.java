@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 public class MailSender {
-    private final String senderGmailId="**";
-    private final String senderGmailPassword="**";
+    private final String senderGmailId="upretisaurav7@gmail.com";
+    private final String senderGmailPassword="eixxbbhpvplulyha";
     private Session session;
     private MimeMessage mimeMessage;
 
