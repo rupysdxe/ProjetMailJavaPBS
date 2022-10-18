@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class MailSender {
     private final String senderGmailId="rupesh156.coding@gmail.com";
-    private final String senderGmailPassword="Enter your password Here";
+    private final String senderGmailPassword="*****";
     private Session session;
     private MimeMessage mimeMessage;
 
