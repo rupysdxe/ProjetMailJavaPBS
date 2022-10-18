@@ -6,11 +6,12 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Properties;
 
 public class MailSender {
-    private final String senderGmailId="rupesh156.coding@gmail.com";
-    private final String senderGmailPassword="*****";
+    private final String senderGmailId="**";
+    private final String senderGmailPassword="**";
     private Session session;
     private MimeMessage mimeMessage;
 
@@ -33,6 +34,20 @@ public class MailSender {
         });
         session.setDebug(true);
         this.session=session;
+    }
+    public void sendMultiple(String subject, String message, ArrayList<String> emailList){
+        try {
+            MimeMessage mimeMessage=new MimeMessage(session);
+            for(String tempEmail:emailList){
+                mimeMessage.addRecipient(Message.RecipientType.TO,new InternetAddress(tempEmail));
+            }
+            mimeMessage.setSubject(subject);
+            mimeMessage.setContent(message,"text/html");
+            this.mimeMessage=mimeMessage;
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+
     }
     public void setSubjectAndMessage(String subject, String message,String receiverGmailId){
         try {
